@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "w": 8,
+  "h": 8,
+  "fps": 12,
+  "frames": [
+    { "id": "f-1", "duration": 100 },
+    { "id": "f-2", "duration": 200 }
+  ],
+  "animations": [
+    { "id": "a-1", "name": "Idle", "from": 0, "to": 1, "direction": "pingpong", "loop": true }
+  ],
+  "palettes": [
+    {
+      "id": "p-1",
+      "name": "Fixture",
+      "colors": [
+        { "rgba": [20, 19, 15, 255], "locked": true },
+        { "rgba": [198, 244, 50, 255], "locked": false }
+      ]
+    }
+  ],
+  "activePaletteId": "p-1",
+  "modifiers": [
+    { "id": "m-shadow", "type": "shadow", "enabled": true, "offsetX": 1, "offsetY": 2, "color": [0, 0, 0, 180] }
+  ],
+  "layers": [
+    {
+      "id": "l-1",
+      "name": "Sprite",
+      "kind": "pixel",
+      "visible": true,
+      "locked": false,
+      "alphaLock": false,
+      "opacity": 100,
+      "blend": "normal",
+      "celPaths": ["cels/l-1_0.png", "cels/l-1_1.png"],
+      "modifiers": [
+        { "id": "m-pmap", "type": "palette-map", "enabled": true, "dither": false }
+      ]
+    }
+  ]
+}

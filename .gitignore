@@ -1,0 +1,24 @@
+# Web / Node
+node_modules/
+dist/
+coverage/
+*.log
+.env
+.env.*
+
+# Android Pad
+android-pad/.gradle/
+android-pad/build/
+android-pad/app/build/
+android-pad/local.properties
+*.apk
+*.aab
+*.keystore
+*.jks
+
+# Editor / OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db

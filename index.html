@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    try {
+      var raw = localStorage.getItem('tintbox.ui.prefs.v1');
+      if (raw) {
+        var p = JSON.parse(raw);
+        var t = p && p.app && p.app.theme;
+        if (t === 'paper') {
+          document.querySelector('meta[name="color-scheme"]').content = 'light';
+          document.documentElement.dataset.theme = 'paper';
+        } else if (t === 'workbench' || t === 'charcoal' || t === 'obsidian') {
+          document.querySelector('meta[name="color-scheme"]').content = 'dark';
+          document.documentElement.dataset.theme = t;
+        }
+      }
+    } catch (_) {}
+  </script>
+  <meta name="theme-color" content="#14130f">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <title>Tintbox — pixel art workbench</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

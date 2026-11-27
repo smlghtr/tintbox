@@ -1,0 +1,18 @@
+{
+  "name": "Tintbox",
+  "short_name": "Tintbox",
+  "description": "Browser-first pixel art workbench with non-destructive modifiers, palettes, and frame animation.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#14130f",
+  "theme_color": "#14130f",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

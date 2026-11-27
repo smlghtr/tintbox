@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_base"
+    android:orientation="vertical">
+
+    <!-- Compact workbench status & pad view bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/bg_panel"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <View
+            android:id="@+id/statusDot"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="@drawable/bg_status_dot" />
+
+        <TextView
+            android:id="@+id/modeBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_pill"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="USB"
+            android:textColor="@color/accent"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:fontFamily="monospace"
+            android:maxLines="1"
+            android:text="@string/status_offline"
+            android:textColor="@color/text_muted"
+            android:textSize="11sp" />
+
+        <View
+            android:id="@+id/colorSwatch"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="6dp"
+            android:background="@color/accent" />
+
+        <TextView
+            android:id="@+id/docInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="monospace"
+            android:text="64x64 · pencil"
+            android:textColor="@color/text_primary"
+            android:textSize="11sp" />
+
+        <!-- Frame stepper (shown when doc has >1 frame) -->
+        <LinearLayout
+            android:id="@+id/frameBox"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginEnd="6dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/btnPrevFrame"
+                android:layout_width="24dp"
+                android:layout_height="26dp"
+                android:background="@drawable/bg_express_btn"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="&lt;"
+                android:textColor="@color/text_primary"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/frameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="1/1"
+                android:textColor="@color/text_muted"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/btnNextFrame"
+                android:layout_width="24dp"
+                android:layout_height="26dp"
+                android:background="@drawable/bg_express_btn"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="&gt;"
+                android:textColor="@color/text_primary"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btnMirror"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/bg_express_btn"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:paddingStart="7dp"
+            android:paddingEnd="7dp"
+            android:text="LIVE"
+            android:textColor="@color/text_primary"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/bg_express_btn"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:paddingStart="7dp"
+            android:paddingEnd="7dp"
+            android:text="GRID"
+            android:textColor="@color/text_primary"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/btnFit"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_express_btn"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:paddingStart="7dp"
+            android:paddingEnd="7dp"
+            android:text="FIT"
+            android:textColor="@color/text_primary"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/btnSetup"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_express_btn"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:paddingStart="9dp"
+            android:paddingEnd="9dp"
+            android:text="@string/btn_setup"
+            android:textColor="@color/text_primary"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/btnConnect"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:background="@drawable/bg_express_btn"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:paddingStart="11dp"
+            android:paddingEnd="11dp"
+            android:text="@string/btn_connect"
+            android:textColor="@color/text_primary"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/border_hairline" />
+
+    <!-- Main workspace: Express Keys rail (2-col, flippable left/right) + Drawing Pad + Palette strip -->
+    <LinearLayout
+        android:id="@+id/workspaceRow"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/expressRail"
+            android:layout_width="96dp"
+            android:layout_height="match_parent"
+            android:background="@color/bg_panel"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <!-- Column 1: History & Tools -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/keyUndo"
+                    style="@style/ExpressKey"
+                    android:layout_marginTop="0dp"
+                    android:text="UNDO" />
+
+                <TextView
+                    android:id="@+id/keyPen"
+                    style="@style/ExpressKey"
+                    android:text="PEN" />
+
+                <TextView
+                    android:id="@+id/keyFill"
+                    style="@style/ExpressKey"
+                    android:text="FILL" />
+
+                <TextView
+                    android:id="@+id/keyPick"
+                    style="@style/ExpressKey"
+                    android:text="PICK" />
+
+                <TextView
+                    android:id="@+id/keyBrushDec"
+                    style="@style/ExpressKey"
+                    android:text="B-" />
+
+                <TextView
+                    android:id="@+id/keySym"
+                    style="@style/ExpressKey"
+                    android:text="SYM X" />
+            </LinearLayout>
+
+            <!-- Column 2: Redo, Eraser, Line, Swap, B+, Pen-Only -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/keyRedo"
+                    style="@style/ExpressKey"
+                    android:layout_marginTop="0dp"
+                    android:text="REDO" />
+
+                <TextView
+                    android:id="@+id/keyErase"
+                    style="@style/ExpressKey"
+                    android:text="ERASE" />
+
+                <TextView
+                    android:id="@+id/keyLine"
+                    style="@style/ExpressKey"
+                    android:text="LINE" />
+
+                <TextView
+                    android:id="@+id/keySwap"
+                    style="@style/ExpressKey"
+                    android:text="SWAP" />
+
+                <TextView
+                    android:id="@+id/keyBrushInc"
+                    style="@style/ExpressKey"
+                    android:text="B+" />
+
+                <TextView
+                    android:id="@+id/keyStylusOnly"
+                    style="@style/ExpressKey"
+                    android:text="PEN\nONLY" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/railDivider"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/border_hairline" />
+
+        <LinearLayout
+            android:id="@+id/padColumn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.tintbox.pad.DrawingPadView
+                android:id="@+id/drawingPad"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <View
+                android:id="@+id/paletteDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border_hairline" />
+
+            <!-- Quick Color Palette Strip synced live from Tintbox -->
+            <HorizontalScrollView
+                android:id="@+id/paletteScroll"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:background="@color/bg_panel"
+                android:fillViewport="false"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/paletteStrip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp" />
+            </HorizontalScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

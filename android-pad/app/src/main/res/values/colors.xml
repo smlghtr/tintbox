@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_base">#14130F</color>
+    <color name="bg_panel">#1B1A15</color>
+    <color name="bg_btn">#23211B</color>
+    <color name="bg_btn_pressed">#2F2C23</color>
+    <color name="border_hairline">#343126</color>
+    <color name="accent">#C6F432</color>
+    <color name="accent_dark">#14130F</color>
+    <color name="text_primary">#EAE5D5</color>
+    <color name="text_muted">#9A9380</color>
+    <color name="status_offline">#6E6859</color>
+    <color name="status_connecting">#E6A835</color>
+    <color name="status_online">#C6F432</color>
+    <color name="status_error">#E85D4A</color>
+</resources>

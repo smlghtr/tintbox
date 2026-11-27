@@ -1,0 +1,17 @@
+{
+  "w": 16,
+  "h": 16,
+  "frames": 2,
+  "fps": 10,
+  "layers": [
+    {
+      "id": "l1",
+      "name": "Hero",
+      "visible": true,
+      "modifiers": [
+        { "id": "m1", "type": "outline", "enabled": true, "mode": "outer", "color": [255, 255, 255, 255] }
+      ]
+    }
+  ],
+  "modifiers": []
+}
